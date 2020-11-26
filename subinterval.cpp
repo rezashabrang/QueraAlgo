@@ -17,4 +17,5 @@ int main() {
         cout << array_numbers[i]<<endl;
     }
     return 0;
+    //test
 }
