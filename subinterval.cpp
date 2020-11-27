@@ -1,20 +1,25 @@
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
 int main() {
-
+    // lowest number possible
+    long double ans = 1.0e-100;
     // n
-    int n;
+    long int n;
     cin >> n;
-    int* array_numbers = new int[n];
+    int *array_numbers = new int[n];
     // Getting Numbers
     for (int i = 0; i < n; i++) {
         cin >> array_numbers[i];
     }
-    for (int i = 0; i < n; i++) {
-        cout << array_numbers[i]<<endl;
-    }
+    //end of processing input
+    int *maximimsum = new int[n];
+    maximimsum[0] = array_numbers[0];
+    for (int i = 1; i < n; i++)
+        maximimsum[i] = fmax(array_numbers[i], array_numbers[i] + maximimsum[i - 1]);
+    for (int i = 1; i < n; i++)
+        ans = fmax(ans, maximimsum[i]);
+    cout << ans << endl;
     return 0;
 }
