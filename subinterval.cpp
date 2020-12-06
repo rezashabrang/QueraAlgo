@@ -1,10 +1,13 @@
 #include <iostream>
+#include <cmath>
+#include <algorithm>
 
 using namespace std;
 
 int main() {
     // lowest number possible
-    long double ans = 1.0e-100;
+    int a;
+    long double ans = -1.0e100;
     // n
     long int n;
     cin >> n;
